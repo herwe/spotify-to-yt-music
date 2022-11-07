@@ -66,7 +66,7 @@ def main():
 
 def get_current_video_id(current_artist_from_sp, yt_song, song_title):
     for song_result in yt_song:
-        for index, current_yt_artist in enumerate(song_result['artists']):
+        for current_yt_artist in song_result['artists']:
             name = str(current_yt_artist['name']).lower()
             if name == current_artist_from_sp:
                 similarity = fuzz.ratio(song_result['title'], song_title)
